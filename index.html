@@ -29,7 +29,7 @@
     border-radius: 5px;
 }
 
-#link{
+#link, #link2{
     width: 100%;
     color: #fff;
     padding: 12px 10px;
@@ -41,11 +41,11 @@
     overflow-x: scroll;
     font-weight: 0;
 }
-#link::-webkit-scrollbar{
+#link::-webkit-scrollbar, #link2::-webkit-scrollbar{
     display: none;
 }
 
-#copy-btn{
+#copy-btn, #copy-btn2{
     color: #fff;
     padding: 0 20px;
     font-size: 18px;
@@ -371,7 +371,7 @@ Join our vibrant Minecraft community where creativity and adventure thrive. We o
 Connect With Us:
 <ul>
     <li><b>IP:</b> mc.ceyloncraft.online</li>
-    <li><b>Discord:</b><a href="https://discord.gg/kpabbYtutF" target="_blank"> Join our Discord</a></li>
+    <li><b>Discord:</b><a style="text-decoration: underline; color: lightblue;" href="https://discord.gg/kpabbYtutF" target="_blank"> Join our Discord</a></li>
 
 
 </ul><br>
@@ -391,12 +391,15 @@ Thank you for choosing CeylonCraft!
                      <br>
                     <h2>LINKS</h2><br>
                     <div class="copyfield">
+                        <p style="padding: 10px; text-transform: uppercase;" class="para-text">Server IP</p>
                         <span id="link" class = "para-text">mc.ceyloncraft.online</span>
                         <span id="copy-btn">Copy</span>
                     </div><br>
+
                     <div class="copyfield">
-                        <span id="link" class = "para-text">store.ceyloncraft.online</span>
-                        <span id="copy-btn" >Copy</span>
+                        <p style="padding: 10px; text-transform: uppercase;" class="para-text">store</p>
+                        <span id="link2" class = "para-text">store.ceyloncraft.online</span>
+                        <span id="copy-btn2">Copy</span>
                     </div>
                 </div>
 
@@ -458,12 +461,22 @@ Thank you for choosing CeylonCraft!
         <script>
             var copybtn = document.getElementById("copy-btn");
         var link = document.getElementById("link");
+        var copybtn2 = document.getElementById("copy-btn2");
+        var link2 = document.getElementById("link2");
 
         copybtn.onclick = function () {
             navigator.clipboard.writeText(link.innerHTML);
             copybtn.innerHTML = "Copied"
             setTimeout(function (){
                 copybtn.innerHTML = "Copy"
+            }, 2000)
+        }
+
+        copybtn2.onclick = function () {
+            navigator.clipboard.writeText(link2.innerHTML);
+            copybtn2.innerHTML = "Copied"
+            setTimeout(function (){
+                copybtn2.innerHTML = "Copy"
             }, 2000)
         }
         </script>

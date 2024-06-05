@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>CeylonCraft | Minecraft Network</title>
+        <meta name="description" content="">
+        <link rel="shortcut icon" href="/assets/images/Logo.png" type="image/x-icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- font awesome cdn -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- slick slider css -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- custom css (tailwind) -->
+        <link rel="stylesheet" href="../dist/main.css">
+    </head>
+    <body>
+        <!-- injected by GGRiviya -->
+    <style>
+        *{
+            scroll-behavior: smooth ;
+        }
+
+        .copyfield{
+    display: flex;
+    align-items: center;
+    background-color: #212121;
+    border-radius: 5px;
+}
+
+#link{
+    width: 100%;
+    color: #fff;
+    padding: 12px 10px;
+    border: 1px solid #fff;
+    background-color: transparent;
+    opacity: 0.5;
+    border-radius: 5px;
+    font-size: 19px;
+    overflow-x: scroll;
+    font-weight: 0;
+}
+#link::-webkit-scrollbar{
+    display: none;
+}
+
+#copy-btn{
+    color: #fff;
+    padding: 0 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+#about-text{
+    font-size: 20px;
+}
+    </style>
+        <header class = "header">
+            <nav class = "navbar flex items-center shadow-nav">
+                <div class = "container w-full">
+                    <div class = "navbar-content">
+                        <div class = "brand-and-toggler flex items-center justify-between">
+                            <a href = "#" class = "navbar-brand">ceylon<span class = "text-yellow-normal">craft</span></a>
+                            <button type = "button" class = "lg:hidden text-white text-2xl" id = "navbar-show-btn">
+                                <i class = "fas fa-bars"></i>
+                            </button>
+                        </div>
+
+                        <div class = "navbar-collapse fixed right-0 top-0 w-full sm:w-[280px] h-full bg-white shadow-nav-collapse pt-[60px] px-5 pb-4 text-center transition ease-in-out duration-300 transform lg:relative lg:p-0 lg:flex lg:items-center lg:justify-end lg:w-full lg:bg-transparent lg:shadow-none translate-x-full lg:translate-x-0">
+                            <button type = "button" class = "lg:hidden" id = "navbar-hide-btn">
+                                <i class = "fa-solid fa-xmark text-2xl"></i>
+                            </button>
+
+                            <ul class = "navbar-nav">
+                                <li class = "nav-item">
+                                    <a href = "#" class = "nav-link">home</a>
+                                </li>
+                                <li class = "nav-item">
+                                    <a href = "#download" class = "nav-link">DOWNLOADS</a>
+                                </li>
+                                <li class = "nav-item">
+                                    <a href = "#about" class = "nav-link">About</a>
+                                </li>
+                                <li class = "nav-item">
+                                    <a href = "#server-ip" class = "nav-link">SERVER IP</a>
+                                </li>
+                            </ul>
+
+                            <!-- <ul class = "connect-list">
+                                <li class = "connect-text">connect</li>
+                                <li>
+                                    <a href = "#" class = "connect-link">
+                                        <img src = "../assets/icons/rss.svg" alt = "">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href = "#" class = "connect-link">
+                                        <img src = "../assets/icons/.svg" alt = "">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href = "#" class = "connect-link">
+                                        <img src = "../assets/icons/twitch.svg" alt = "">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href = "#" class = "connect-link">
+                                        <img src = "../assets/icons/youtube.svg" alt = "">
+                                    </a>
+                                </li>
+                            </ul> -->
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <div class = "banner-content">
+                <div class = "banner-badge">Welcome To</div>
+                <h1 class = "banner-title">CeylonCraft Network</h1>
+                <p class = "lead-text">Welcome to CeylonCraft, your ultimate Minecraft adventure! Explore, build, and compete in our dynamic network. Join our thriving community and embark on endless adventures today!</p><br>
+                <a href="#server-ip"><button type = "button" class = "banner-btn">
+                    <span class = "me-4">
+                        <img src = "../assets/icons/console.svg" alt = "">
+                    </span>
+                    <span>server IP</span>
+                </button></a>
+            </div>
+        </header>
+
+
+        <div class = "py-16 bg-violet-darker overflow-hidden">
+            <div class = "game-slider">
+                <div class = "slider-item img-fit-cover">
+                    <img src = "/assets/images/join_image.png" class = "slider-item-img">
+                </div>
+                <div class = "slider-item img-fit-cover">
+                    <img src = "/assets/images/banner_image.png" class = "slider-item-img">
+                </div>
+                <div class = "slider-item img-fit-cover">
+                    <img src = "/assets/images/a.png" class = "slider-item-img">
+                </div>
+                <div class = "slider-item img-fit-cover">
+                    <img src = "/assets/images/b.png" class = "slider-item-img">
+                </div>
+                <div class = "slider-item img-fit-cover">
+                    <img src = "/assets/images/c.png" class = "slider-item-img">
+                </div>
+                <div class = "slider-item img-fit-cover">
+                    <img src = "/assets/images/d.png" class = "slider-item-img">
+                </div>
+                <div class = "slider-item img-fit-cover">
+                    <img src = "/assets/images/e.png" class = "slider-item-img">
+                </div>
+            </div>
+        </div>
+
+        <section class = "py-16 sc-join flex items-center bg-join-image relative after:absolute after:content-[''] after:bg-gradient-to-b after:from-black/50 after:to-black/50 after:bg-center after:bg-cover after:bg-no-repeat">
+            <div class = "container w-full">
+                <div class = "join-content">
+                    <h2 class = "join-title uppercase">join the community</h2>
+                    <p class = "lead-text py-2">Join our Discord community which is in the making and made by gamers for gamers. All are welcome to join no matter the game you play, we're here to have a good.</p>
+                    <a href="https://discord.gg/kpabbYtutF" target="_blank"><button type = "button" class = "section-btn mt-4">join discord</button></a>
+                </div>
+            </div>
+        </section>
+<hr>
+        <section id="download" class = "py-16 sc-category">
+            <div class = "container">
+                <div class = "sc-title">
+                    <h3>Downloads <span></span></h3>
+                    <div class = "line"></div>
+                </div>
+
+                <div class = "button-group mx-auto filter-button-group flex items-center justify-center flex-wrap">
+                    <button data-filter = "resource">Resource Packs</button>
+                    <button data-filter = "shooter">Minecraft PC</button>
+                    <button data-filter = "strategy">Minecraft Mobile</button>
+                    <button data-filter = "arcade">Wallpapers</button>
+                    <button data-filter = "adventure">CeylonCraft Stuff</button>
+                </div>
+
+                <div class = "mt-16 grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                    <div class = "category-item img-fit-cover shadow-category-item overflow-hidden resource">
+                        <img src = "/assets/images/Logo.png" alt = "lol">
+                        <div class = "category-item-info">
+                            <div class = "bg-green-normal text-white py-[2px] px-[6px] inline-block uppercase text-xs tracking-widest mb-[6px]">Resource Packs</div>
+                            <h3 class = "font-medium text-[18px] tracking-[.03em] uppercase text-white mb-2">CeylonCraft</h3>
+                        </div>
+                    </div>
+
+                    <!-- <div class = "category-item img-fit-cover shadow-category-item overflow-hidden action adventure">
+                        <img src = "../assets/images/action-2.jpg" alt = "">
+                        <div class = "category-item-info">
+                            <div class = "bg-green-normal text-white py-[2px] px-[6px] inline-block uppercase text-xs tracking-widest mb-[6px]">action</div>
+                            <h3 class = "font-medium text-[18px] tracking-[.03em] uppercase text-white mb-2">The Witcher 3: Wild Hunt</h3>
+                            <ul class = "flex mb-[14px]">
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-1.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-2.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-3.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-4.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-5.svg" /></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class = "category-item img-fit-cover shadow-category-item overflow-hidden action strategy adventure">
+                        <img src = "../assets/images/action-3.jpg" alt = "">
+                        <div class = "category-item-info">
+                            <div class = "bg-green-normal text-white py-[2px] px-[6px] inline-block uppercase text-xs tracking-widest mb-[6px]">action</div>
+                            <h3 class = "font-medium text-[18px] tracking-[.03em] uppercase text-white mb-2">Tomb Raider (2013)</h3>
+                            <ul class = "flex mb-[14px]">
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-1.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-2.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-3.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-4.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-5.svg" /></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class = "category-item img-fit-cover shadow-category-item overflow-hidden shooter strategy arcade">
+                        <img src = "../assets/images/action-4.jpg" alt = "">
+                        <div class = "category-item-info">
+                            <div class = "bg-green-normal text-white py-[2px] px-[6px] inline-block uppercase text-xs tracking-widest mb-[6px]">action</div>
+                            <h3 class = "font-medium text-[18px] tracking-[.03em] uppercase text-white mb-2">Counter-Strike: Global Offensive</h3>
+                            <ul class = "flex mb-[14px]">
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-1.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-2.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-3.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-4.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-5.svg" /></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class = "category-item img-fit-cover shadow-category-item overflow-hidden action">
+                        <img src = "../assets/images/action-5.jpg" alt = "">
+                        <div class = "category-item-info">
+                            <div class = "bg-green-normal text-white py-[2px] px-[6px] inline-block uppercase text-xs tracking-widest mb-[6px]">action</div>
+                            <h3 class = "font-medium text-[18px] tracking-[.03em] uppercase text-white mb-2">The Elder Scrolls V: Skyrim</h3>
+                            <ul class = "flex mb-[14px]">
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-1.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-2.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-3.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-4.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-5.svg" /></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class = "category-item img-fit-cover shadow-category-item overflow-hidden arcade adventure">
+                        <img src = "../assets/images/action-6.jpg" alt = "">
+                        <div class = "category-item-info">
+                            <div class = "bg-green-normal text-white py-[2px] px-[6px] inline-block uppercase text-xs tracking-widest mb-[6px]">action</div>
+                            <h3 class = "font-medium text-[18px] tracking-[.03em] uppercase text-white mb-2">Sid Meier's Civilization</h3>
+                            <ul class = "flex mb-[14px]">
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-1.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-2.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-3.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-4.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-5.svg" /></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class = "category-item img-fit-cover shadow-category-item overflow-hidden strategy">
+                        <img src = "../assets/images/action-7.jpg" alt = "">
+                        <div class = "category-item-info">
+                            <div class = "bg-green-normal text-white py-[2px] px-[6px] inline-block uppercase text-xs tracking-widest mb-[6px]">action</div>
+                            <h3 class = "font-medium text-[18px] tracking-[.03em] uppercase text-white mb-2">Cities: Skylines</h3>
+                            <ul class = "flex mb-[14px]">
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-1.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-2.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-3.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-4.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-5.svg" /></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class = "category-item img-fit-cover shadow-category-item overflow-hidden action adventure">
+                        <img src = "../assets/images/action-8.jpg" alt = "">
+                        <div class = "category-item-info">
+                            <div class = "bg-green-normal text-white py-[2px] px-[6px] inline-block uppercase text-xs tracking-widest mb-[6px]">action</div>
+                            <h3 class = "font-medium text-[18px] tracking-[.03em] uppercase text-white mb-2">Left 4 Dead 2</h3>
+                            <ul class = "flex mb-[14px]">
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-1.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-2.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-3.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-4.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-5.svg" /></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class = "category-item img-fit-cover shadow-category-item overflow-hidden shooter arcade adventure">
+                        <img src = "../assets/images/action-9.jpg" alt = "">
+                        <div class = "category-item-info">
+                            <div class = "bg-green-normal text-white py-[2px] px-[6px] inline-block uppercase text-xs tracking-widest mb-[6px]">action</div>
+                            <h3 class = "font-medium text-[18px] tracking-[.03em] uppercase text-white mb-2">Dead Men's Army</h3>
+                            <ul class = "flex mb-[14px]">
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-1.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-2.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-3.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-4.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-5.svg" /></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class = "category-item img-fit-cover shadow-category-item overflow-hidden action adventure">
+                        <img src = "../assets/images/action-10.jpg" alt = "">
+                        <div class = "category-item-info">
+                            <div class = "bg-green-normal text-white py-[2px] px-[6px] inline-block uppercase text-xs tracking-widest mb-[6px]">action</div>
+                            <h3 class = "font-medium text-[18px] tracking-[.03em] uppercase text-white mb-2">Brutal Legend</h3>
+                            <ul class = "flex mb-[14px]">
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-1.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-2.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-3.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-4.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-5.svg" /></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class = "category-item img-fit-cover shadow-category-item overflow-hidden strategy arcade">
+                        <img src = "../assets/images/action-11.jpg" alt = "">
+                        <div class = "category-item-info">
+                            <div class = "bg-green-normal text-white py-[2px] px-[6px] inline-block uppercase text-xs tracking-widest mb-[6px]">action</div>
+                            <h3 class = "font-medium text-[18px] tracking-[.03em] uppercase text-white mb-2">Injustice: Gods Among Us Ultimate Edition</h3>
+                            <ul class = "flex mb-[14px]">
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-1.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-2.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-3.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-4.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-5.svg" /></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class = "category-item img-fit-cover shadow-category-item overflow-hidden strategy">
+                        <img src = "../assets/images/action-12.jpg" alt = "">
+                        <div class = "category-item-info">
+                            <div class = "bg-green-normal text-white py-[2px] px-[6px] inline-block uppercase text-xs tracking-widest mb-[6px]">action</div>
+                            <h3 class = "font-medium text-[18px] tracking-[.03em] uppercase text-white mb-2">Minecraft</h3>
+                            <ul class = "flex mb-[14px]">
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-1.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-2.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-3.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-4.svg" /></li>
+                                <li class = "me-3"><img src = "../assets/icons/dev-icon-5.svg" /></li>
+                            </ul>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+
+    <hr>
+
+        <section id="about" class = "py-16 sc-stores bg-violet-darker">
+            <div class = "container">
+                <div class = "sc-title">
+                    <h3>About <span>Us</span></h3>
+                    <div class = "line"></div>
+                    <div class="para-text" id="about-text">
+                        <br>
+                        <h1>Welcome to CeylonCraft!</h1><br>
+Join our vibrant Minecraft community where creativity and adventure thrive. We offer diverse game modes, custom features, and regular events.
+<br><br>
+Connect With Us:
+<ul>
+    <li><b>IP:</b> mc.ceyloncraft.online</li>
+    <li><b>Discord:</b> Join our Discord</li>
+
+
+</ul><br>
+Thank you for choosing CeylonCraft!
+                    </div>
+                </div>
+
+                
+            </div>
+        </section>
+        <hr>
+        <section id="server-ip" class = "py-16 sc-stores bg-violet-darker">
+            <div class = "container">
+                <div class = "sc-title">
+                    <h3>Join <span>Now</span></h3>
+                    <div class = "line"></div>
+                     <br>
+                    <h2>Links</h2><br>
+                    <div class="copyfield">
+                        <span id="link">mc.ceyloncraft.online</span>
+                        <span id="copy-btn">Copy</span>
+                    </div><br>
+                    <div class="copyfield">
+                        <span id="link">store.ceyloncraft.online</span>
+                        <span id="copy-btn">Copy</span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </section>
+
+        <footer class = "footer">
+            <div class = "footer-top">
+                <div class = "container grid gap-6 lg:grid-cols-[2fr_repeat(3,1fr)] text-center lg:text-start">
+                    <div class = "footer-item">
+                        <a href = "#" class = "navbar-brand">CeylonCraft <span></span></a>
+                        <p class = "para-text">Develop by CeylonCraft Dev Team &nbsp; | &nbsp; Main Concept By <b>@GGRiviya</b></p>
+                    </div>
+
+                    <!-- <div class = "footer-item">
+                        <h5 class = "footer-item-title">quick link</h5>
+                        <ul class = "footer-item-links">
+                            <li><a href = "#">Gaming</a></li>
+                            <li><a href = "#">Product</a></li>
+                            <li><a href = "#">Social Network</a></li>
+                            <li><a href = "#">Community</a></li>
+                        </ul>
+                    </div>
+
+                    <div class = "footer-item">
+                        <h5 class = "footer-item-title">supports</h5>
+                        <ul class = "footer-item-links">
+                            <li><a href = "#">Settings & Privacy</a></li>
+                            <li><a href = "#">Help & Support</a></li>
+                            <li><a href = "#">Live Actions</a></li>
+                            <li><a href = "#">Our News</a></li>
+                        </ul>
+                    </div>
+
+                    <div class = "footer-item">
+                        <h5 class = "footer-item-title">newsletter</h5>
+                        <p class = "para-text">Subscribe our newsletter to get our latest update & news consectetur</p>
+
+                        <form class = "newsletter-form mt-4">
+                            <div class = "input-group">
+                                <input type = "text" class = "input-group-field outline-none" placeholder="Your email address" />
+                                <button class = "input-group-btn" type = "button">
+                                    <i class = "fa-solid fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div> -->
+                </div>
+            </div>
+        </footer>
+
+        <!-- jquery cdn -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- slick slider js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- custom script js -->
+        <script src="/src/script.js"></script>
+        <script>
+            var copybtn = document.getElementById("copy-btn");
+        var link = document.getElementById("link");
+
+        copybtn.onclick = function () {
+            navigator.clipboard.writeText(link.innerHTML);
+            copybtn.innerHTML = "Copied"
+            setTimeout(function (){
+                copybtn.innerHTML = "Copy"
+            }, 2000)
+        }
+        </script>
+    </body>
+</html>

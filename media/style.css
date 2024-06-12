@@ -116,13 +116,13 @@ body {
     margin-left: auto;
     margin-right: 2rem;
     font-weight: 700;
-    border: solid 1px var(--accent1);
+    border: solid 1px orange;
     border-radius: var(--roundness);
     text-align: center;
 }
 .desktop_navbar_link2_div:hover {
-    border: solid 1px var(--accent2);
-    background-color: var(--accent2);
+    border: solid 1px orange;
+    background-color: orange;
     transform: scale(1.05)
 }
 
@@ -249,11 +249,13 @@ body {
     transition: all .5s;
     cursor:pointer;
     position: relative;
+    background-color: orange;
 }
 
 .main1_ipcopier:hover {
     background-color: var(--accent2);
-    transform: scale(1.05)
+    transform: scale(1.05);
+    background-color: rgb(211, 137, 0);
 }
 
 .main1_ipcopier_text1 {
@@ -412,7 +414,7 @@ body {
     text-decoration: none;
     color: #fff;
     text-align: center;
-    border: solid var(--accent1) 1px;
+    border: solid orange 1px;
     border-radius: var(--roundness);
     margin-top: auto;
     margin-left: auto;
@@ -421,8 +423,8 @@ body {
     transition: all .5s;
 }
 .main4_dc_button_a:hover{
-    border: solid 1px var(--accent2);
-    background-color: var(--accent2);
+    border: solid 1px orange;
+    background-color: orange;
     transform: scale(1.05)
 }
 .main4_dc_button {
@@ -716,6 +718,7 @@ body {
     .main4_dc_widget {
         height: 20rem;
         width: 100%;
+        overflow: hidden;
     }
     .main3_join_div {
         min-width: 20rem;

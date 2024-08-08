@@ -1,244 +1,465 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CeylonCraft | Minecraft Network</title>
-    <link rel="icon" type="image/png" href="media/logo.png">
-    <link rel="stylesheet" href="media/style.css">
-    <link href="https://fonts.bunny.net/css?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <nav class="desktop_navbar">
-      <a href="#"><img class="desktop_navbar_logo_img" src="media/server-icon.png" alt="logo"></a>
-      <a href="https://store.ceyloncraft.online" class="desktop_navbar_link">Store</a>
-      <a href="https://ban.ceyloncraft.online" class="desktop_navbar_link">Punishments</a>
-      <a href="#discord" class="desktop_navbar_link scroll">Community</a>
-      <a href="#about" class="desktop_navbar_link scroll">About Us</a>
-      <div class="desktop_navbar_link2_div">
-          <a href="#join" class="desktop_navbar_link2 scroll">Join Us!</a>
-      </div>
-    </nav>
-    <div class="mobile_navbar">
-      <a href="#" class="mobile_navbar_logo_img_a"><img class="mobile_navbar_logo_img" src="media/server-icon.png" alt="logo"></a>
-      <div id="mobile_navbar_links">
-          <a class="mobile_navbar_link" onclick="mobile_navbar_link_hider()" href="https://store.ceyloncraft.online">Store</a>
-          <a class="mobile_navbar_link" onclick="mobile_navbar_link_hider()" href="https://ban.ceyloncraft.online">Punishments</a>
-          <a class="mobile_navbar_link scroll" onclick="mobile_navbar_link_hider()" href="#discord">Community</a>
-          <a class="mobile_navbar_link scroll" onclick="mobile_navbar_link_hider()" href="#about">About Us</a>
-          <a class="mobile_navbar_link scroll" onclick="mobile_navbar_link_hider()" href="#join">Join Us</a>
-        </div>
-        <div class="icon" onclick="mobile_navbar_link_hider()">
-            <i class="fa fa-bars"></i>
-        </div>
-        <script>
-            function mobile_navbar_link_hider() {
-            var x = document.getElementById("mobile_navbar_links");
-            if (x.style.display === "flex") {
-                x.style.display = "none";
-            } else {
-                x.style.display = "flex";
-            }
-            } 
-        </script>
-    </div>
-    <div class="mainflex">
-      <div class="main1">
-        <a class="main1_logo_a" href="#">
-          <img class="main1_logo" src="media/logo.png" alt="logo">
-        </a>
-        <div class="main1_description">
-          <a>Welcome To,<a class="main1_actcent" style="color: orange;"><b><br>CeylonCraft</a>
-          Minecraft Network<a>.</a></b>
-        </div>
-        <div class="main1_ipcopier_div">
-          <button class="main1_ipcopier" onclick="copyText()" type="button">
-            <span class="main1_ipcopier_text1">mc.ceyloncraft.online</span>
+    <meta property="og:title" content="CeylonCraft Minecraft Network" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/public/logo-600h.png" type="image/x-icon">
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+        fill: var(--dl-color-gray-black);
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/animate.css@4.1.1/animate.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
+    />
+    <style>
+       body::-webkit-scrollbar {
+         width: 0.5em;
+         z-index: 100;
+         background-color:transparent;
+       }
+
+
+      body::-webkit-scrollbar-thumb {
+         background-color:white;
+         box-shadow:0 -100vh 0 100vh orange;
+       }
+    </style>
+  </head>
+  <body>
+    <link rel="stylesheet" href="./style.css" />
+    <div>
+      <link href="./index.css" rel="stylesheet" />
+
+      <div class="home-container">
+        <section class="home-hero" style="background: url(public/image\ \(1\).png); background-position: center;">
+          <header class="home-header">
+            <div id="mobile-menu" class="home-mobile-navigation">
+              <img
+                alt="pastedImage"
+                src="public/logo-600h.png"
+                class="home-logo"
+              />
+              <div class="home-links">
+                <a href="#gamemodes" class="home-link Link">Gamemodes</a>
+                <a href="https://store.ceyloncraft.online" target="_blank" class="home-link Link">Store</a>
+                <a href="https://forum.ceyloncraft.online" target="_blank" class="home-link Link">Forum</a>
+                <a href="#team" class="home-link1 Link">Team</a>
+                <a href="#Discord" class="home-link2 Link">Discord</a>
+              </div>
+              <div id="close-mobile-menu" class="home-close-mobile-menu">
+                <svg viewBox="0 0 804.5714285714286 1024" class="home-icon">
+                  <path
+                    d="M741.714 755.429c0 14.286-5.714 28.571-16 38.857l-77.714 77.714c-10.286 10.286-24.571 16-38.857 16s-28.571-5.714-38.857-16l-168-168-168 168c-10.286 10.286-24.571 16-38.857 16s-28.571-5.714-38.857-16l-77.714-77.714c-10.286-10.286-16-24.571-16-38.857s5.714-28.571 16-38.857l168-168-168-168c-10.286-10.286-16-24.571-16-38.857s5.714-28.571 16-38.857l77.714-77.714c10.286-10.286 24.571-16 38.857-16s28.571 5.714 38.857 16l168 168 168-168c10.286-10.286 24.571-16 38.857-16s28.571 5.714 38.857 16l77.714 77.714c10.286 10.286 16 24.571 16 38.857s-5.714 28.571-16 38.857l-168 168 168 168c10.286 10.286 16 24.571 16 38.857z"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+            <div class="home-desktop-navigation">
+              <nav class="home-centered">
+                <div class="home-left">
+                  <img
+                    alt="pastedImage"
+                    src="public/logo-600h.png"
+                    class="home-logo1"
+                  />
+                  <div class="home-links1">
+                    <a href="#gamemodes" class="home-link Link">Gamemodes</a>
+                    <a href="https://store.ceyloncraft.online" target="_blank" class="home-link Link">Store</a>
+                    <a href="https://forum.ceyloncraft.online" target="_blank" class="home-link Link">Forum</a>
+                    <a href="#team" class="home-link1 Link">Team</a>
+                    <a href="#Discord" class="home-link2 Link">Discord</a>
+                  </div>
+                </div>
+                <div class="home-right">
+                  <p style="margin-right: 20px;" id="hello-text"></p>
+                  <a
+                    href="https://ceyloncraft.online/discord"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    class="home-link3"
+                  >
+                    <div class="home-get-started">
+                      <span class="home-text03">Join Us</span>
+                    </div>
+                  </a>
+                  <div id="open-mobile-menu" class="home-burger-menu">
+                    <img
+                      alt="pastedImage"
+                      src="public/pastedimage-yxbd.svg"
+                      class="home-mobile-menu-button"
+                    />
+                  </div>
+                </div>
+              </nav>
+            </div>
+            <div>
+              <div class="home-container2">
+                <script defer="">
+                  /*
+                  Mobile menu - Code Embed
+                  */
+
+                  // Mobile menu
+                  const mobileMenu = document.querySelector('#mobile-menu')
+
+                  // Buttons
+                  const closeButton = document.querySelector('#close-mobile-menu')
+                  const openButton = document.querySelector('#open-mobile-menu')
+
+                  // On openButton click, set the mobileMenu position left to -100vw
+                  openButton.addEventListener('click', function() {
+                      mobileMenu.style.transform = 'translateX(0%)'
+                  })
+
+                  // On closeButton click, set the mobileMenu position to 0vw
+                  closeButton.addEventListener('click', function() {
+                      mobileMenu.style.transform = 'translateX(100%)'
+                  })
+                </script>
+              </div>
+            </div>
+          </header>
+          <header class="home-content">
+            <h1 class="home-text04">Join CeylonCraft</h1>
+            <p class="home-text05">
+              Discover a world of opportunities in our friendly Minecraft
+              community for players of every skill level. Embark on your journey
+              with CeylonCraft now!
+            </p>
+            <input type="hidden" id="ip-cop" value="mc.ceyloncraft.online">
+            <button class="home-get-started1" id="button-cop" onclick="copyText()">
+              <span class="home-text06">Connect to the server</span>
+            </button>
+            <script defer>
+              //document.getElementById('hello-text').innerHTML('done');
+                 //var hellotext = document.getElementById('hello-text');
+              function copyText() {
+                navigator.clipboard.writeText("mc.ceyloncraft.online");
+                alert('IP Copied - mc.ceyloncraft.online');
+                //var name = prompt('IP Copied : mc.ceyloncraft.online '+'-'+''+'  Please Enter Your Minecraft Username');
+             
+
+                //document.getElementById('hello-text').writeText('done');
+              }
+            </script>
             <br>
-            <span class="main1_ipcopier_text2">Click to copy</span>
-          </button>
-          <script>
-            function copyText() {
-                navigator.clipboard.writeText
-            ("mc.ceyloncraft.online");
-                }
-            $(document).ready(function() {
-            $('.main1_ipcopier').click(function() {
-                var popup = $('<div>', { class: 'main1_popup' })
-                .append($('<h3 class="copy_confirm">').text('Copied IP to clipboard'))
-                $(this).after(popup);
-                setTimeout(function() {
-                popup.remove();
-                }, 1000);
-            });
-            });
-        </script>
-        </div>
-        <a href="#more" class="scroll">
-          <img alt="downarrow" class="main1_downarrow" src="media/downarrow.png">
-        </a>
+            <p style="color: white; margin-bottom: 10px;">Supporting Version : <b>1.8.x</b> above only</p><br><br>
+          </header>
+        </section>
+        <section id="gamemodes" class="home-gamemodes">
+          <span class="home-text07">Available Gamemodes</span>
+          <div class="home-title">
+            <span class="home-text08">Explore Our Exciting Gamemodes</span>
+          </div>
+          <div class="home-cards">
+            <div class="home-container3">
+              <div class="card">
+                <img
+                  alt="pastedImage"
+                  src="public/survival-200h.jpg"
+                  class="home-icon2"
+                />
+                <span class="home-text09">Survival</span>
+                <span class="home-text10">
+                  Gather resources, build shelters, and fend off monsters.
+                  Thrive in an open world with endless adventures!
+                </span>
+              </div>
+              <div class="home-port-city card">
+                <img
+                  alt="pastedImage"
+                  src="public/portcity-200h.jpg"
+                  class="home-icon3"
+                />
+                <span class="home-text11">Portcity</span>
+                <span class="home-text12">
+                  Build and explore a bustling harbor town with ships, markets,
+                  and hidden treasures!
+                </span>
+              </div>
+            </div>
+            <div class="home-container4">
+              <div class="card home-sky-block">
+                <img
+                  alt="pastedImage"
+                  src="public/skyblock-200h.jpg"
+                  class="home-icon4"
+                />
+                <span class="home-text13">SkyBlock</span>
+                <span class="home-text14">
+                  Survive on a tiny island with limited resources. Expand,
+                  craft, and thrive!
+                </span>
+              </div>
+              <div class="home-slime-fun card">
+                <img
+                  alt="pastedImage"
+                  src="public/slimefun-200h.jpg"
+                  class="home-icon5"
+                />
+                <span class="home-text15">Slimefun</span>
+                <span class="home-text16">
+                  Elevate your Minecraft experience with custom items, machines,
+                  and technology!
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="home-quote-container">
+          <div class="home-quote">
+            <span class="home-message">
+              “Join the adventure in CeylonCraft, where every block you place
+              and every challenge you conquer brings you closer to an
+              unforgettable gaming experience. Whether you're building epic
+              structures, surviving in the wild, or battling it out in KitPvP,
+              CeylonCraft is your ultimate Minecraft playground.”
+            </span>
+            <div class="home-author">
+              <img
+                alt="image"
+                src="/public/Cwr/disiya-200h.jpg"
+                class="home-avatar"
+              />
+              <span class="home-quote1">—&nbsp; Technoblade</span>
+            </div>
+          </div>
+        </section>
+        <section class="home-banners">
+          <div id="Discord" class="home-banner-manage">
+            <div class="home-container5">
+              <div class="home-left1">
+                <span class="sub-title">
+                  <span>Discord Server</span>
+                  <br />
+                </span>
+                <span class="home-text20 title">
+                  Come hang out with us on our Discord server for a fun and
+                  interactive community experience!
+                </span>
+                <span class="home-text21">
+                  Join our Discord server to connect with the community and
+                  manage all your platforms in just one place!
+                </span>
+                <a
+                  href="https://ceyloncraft.online/discord"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="home-link4"
+                >
+                  <div class="home-get-started2 template-button">
+                    <span class="home-text22">Join us</span>
+                  </div>
+                </a>
+              </div>
+              <div class="home-image-container">
+                <img
+                  alt="pastedImage"
+                  src="public/discord-mark-blue.png"
+                  class="home-cards-image"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="team" class="home-testimonals">
+          <div class="home-left2">
+            <span class="home-text23">Our Team</span>
+            <span class="home-text24 title">Team of Ceyloncraft</span>
+          </div>
+          <div class="home-right1">
+            <div class="home-column">
+              <div class="testimonal-testimonal testimonal">
+                <span class="testimonal-text">
+                  <span>
+                    CeylonCraft Minecraft Network Owned by GGRiviya, CeylonCraft
+                    offers a vibrant and immersive Minecraft experience. Join
+                    our thriving community, explore unique worlds, and engage in
+                    epic adventures. Build, craft, and conquer in a realm where
+                    creativity knows no bounds!
+                  </span>
+                </span>
+                <div class="testimonal-author">
+                  <div class="testimonal-avatar">
+                    <img
+                      alt="GGRiviya"
+                      src="public/Cwr/riviya-200h.jpg"
+                      class="testimonal-image"
+                    />
+                  </div>
+                  <div class="testimonal-user">
+                    <span class="testimonal-name"><span>GGRiviya</span></span>
+                    <span class="testimonal-divider">—</span>
+                    <span class="testimonal-from"><span>Owner</span></span>
+                  </div>
+                </div>
+              </div>
+              <div class="testimonal-testimonal testimonal">
+                <span class="testimonal-text">
+                  <span>
+                    CeylonCraft Minecraft Network Owned by GGRiviya, CeylonCraft
+                    offers a vibrant and immersive Minecraft experience. Join
+                    our thriving community, explore unique worlds, and engage in
+                    epic adventures. Build, craft, and conquer in a realm where
+                    creativity knows no bounds!
+                  </span>
+                </span>
+                <div class="testimonal-author">
+                  <div class="testimonal-avatar">
+                    <img
+                      alt="Disiya04"
+                      src="public/Cwr/disiya-200h.jpg"
+                      class="testimonal-image"
+                    />
+                  </div>
+                  <div class="testimonal-user">
+                    <span class="testimonal-name"><span>Disiya04</span></span>
+                    <span class="testimonal-divider">—</span>
+                    <span class="testimonal-from"><span>Co Owner</span></span>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            <div class="home-column1">
+              <div class="testimonal-testimonal testimonal">
+                <span class="testimonal-text">
+                  <span>
+                    CeylonCraft Minecraft Network Owned by GGRiviya, CeylonCraft
+                    offers a vibrant and immersive Minecraft experience. Join
+                    our thriving community, explore unique worlds, and engage in
+                    epic adventures. Build, craft, and conquer in a realm where
+                    creativity knows no bounds!
+                  </span>
+                </span>
+                <div class="testimonal-author">
+                  <div class="testimonal-avatar">
+                    <img
+                      alt="McMobile"
+                      src="public/Cwr/mcmobile-200h.jpg"
+                      class="testimonal-image"
+                    />
+                  </div>
+                  <div class="testimonal-user">
+                    <span class="testimonal-name"><span>McMobile</span></span>
+                    <span class="testimonal-divider">—</span>
+                    <span class="testimonal-from"><span>Co Owner</span></span>
+                  </div>
+                </div>
+              </div>
+              <div class="testimonal-testimonal testimonal">
+                <span class="testimonal-text">
+                  <span>
+                    CeylonCraft Minecraft Network Owned by GGRiviya, CeylonCraft
+                    offers a vibrant and immersive Minecraft experience. Join
+                    our thriving community, explore unique worlds, and engage in
+                    epic adventures. Build, craft, and conquer in a realm where
+                    creativity knows no bounds!
+                  </span>
+                </span>
+                <div class="testimonal-author">
+                  <div class="testimonal-avatar">
+                    <img
+                      alt="Ruvindu_MAX_"
+                      src="public/Cwr/ruviya-200h.jpg"
+                      class="testimonal-image"
+                    />
+                  </div>
+                  <div class="testimonal-user">
+                    <span class="testimonal-name">
+                      <span>Ruvindu_MAX_</span>
+                    </span>
+                    <span class="testimonal-divider">—</span>
+                    <span class="testimonal-from"><span>HeadAdmin</span></span>
+                  </div>
+                </div>
+              </div>
+              <div class="testimonal-testimonal testimonal">
+                <span class="testimonal-text">
+                  <span>
+                    CeylonCraft Minecraft Network Owned by GGRiviya, CeylonCraft
+                    offers a vibrant and immersive Minecraft experience. Join
+                    our thriving community, explore unique worlds, and engage in
+                    epic adventures. Build, craft, and conquer in a realm where
+                    creativity knows no bounds!
+                  </span>
+                </span>
+                <div class="testimonal-author">
+                  <div class="testimonal-avatar">
+                    <img
+                      alt="Gaming_Ghost"
+                      src="public/Cwr/ghost-200h.jpg"
+                      class="testimonal-image"
+                    />
+                  </div>
+                  <div class="testimonal-user">
+                    <span class="testimonal-name">
+                      <span>Gaming_Ghost</span>
+                    </span>
+                    <span class="testimonal-divider">—</span>
+                    <span class="testimonal-from"><span>Admin</span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="home-text25">
+            <span id="show-staff">Show more</span>
+            <br><br>
+          </span>
+        </section>
         <script>
-          const scrollLinks = document.querySelectorAll('.scroll');
-          scrollLinks.forEach(function(link) {
-            link.addEventListener('click', function(event) {
-              event.preventDefault();
-              const target = document.querySelector(link.getAttribute('href'));
-              const offsetTop = target.offsetTop;
-              window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-              });
-            });
+          var showstaff = document.getElementById('show-staff');
+
+          showstaff.addEventListener("click", ()=>{
+            document.querySelector('.home-column1').style.display='block';
           });
         </script>
-      </div>
-      <div id="more"></div>
-      <div class="main2">
-        <a class="headline">What we have</a>
-        <div class="main2_features_div">
-          <div class="main2_feature">
-            <img class="main2_feature_img" alt="Feature Image" src="media/Servers/Skyblock.jpg">
-            <a class="main2_feature_headline">SkyBlock</a>
-            <a class="main2_feature_text">Survive on a tiny island with limited resources. Expand, craft, and thrive!</a>
-          </div>
-          <div class="main2_feature">
-            <img class="main2_feature_img" alt="Feature Image" src="media/Servers/Survival.jpg">
-            <a class="main2_feature_headline">Survival</a>
-            <a class="main2_feature_text">Gather resources, build shelters, and fend off monsters. Thrive in an open world with endless adventures!</a>
-          </div>
-          <div class="main2_feature">
-            <img class="main2_feature_img" alt="Feature Image" src="media/Servers/Headsteal.webp">
-            <a class="main2_feature_headline">Headsteal</a>
-            <a class="main2_feature_text">Collect and trade player heads as trophies by defeating opponents!</a>
-          </div>
-          <div class="main2_feature">
-            <img class="main2_feature_img" alt="Feature Image" src="media/Servers/PortCity.jpg">
-            <a class="main2_feature_headline">Portcity</a>
-            <a class="main2_feature_text">Build and explore a bustling harbor town with ships, markets, and hidden treasures!</a>
-          </div>
-          <div class="main2_feature">
-            <img class="main2_feature_img" alt="Feature Image" src="media/Servers/Kit PvP.jpg">
-            <a class="main2_feature_headline">KitPvP</a>
-            <a class="main2_feature_text">Choose your kit, battle players, and prove your combat skills in intense PvP arenas!</a>
-            
-          </div>
-          <div class="main2_feature">
-            <img class="main2_feature_img" alt="Feature Image" src="media/Servers/Slimefun.jpg">
-            <a class="main2_feature_headline">Slimefun</a>
-            <a class="main2_feature_text">Elevate your Minecraft experience with custom items, machines, and technology!</a>
-          </div>
-        </div>
-        
-      </div>
-      </div>
-      <div id="discord"></div>
-      <div class="main4">
-        <a class="headline">Join the Discord</a>
-        <div class="main4_dc_div">
-          <iframe class="main4_dc_widget" src="media/Servers/PortCity.jpg"></iframe>
-          <div class="main4_dc_description_div">
-            <a class="main4_dc_description_title">Let's talk!</a>
-            <a class="main4_dc_description"> ・Meet other players <br> ・Ask questions <br> ・Get notified about updates <br> ・Give feedback  <br><br> &amp; more </a>
-            <a href="https://discord.gg/kpabbYtutF" class="main4_dc_button_a">
-              <div class="main4_dc_button">Join</div>
+        <footer id="footer" class="home-footer">
+          <div class="home-bottom">
+            <img
+              alt="pastedImage"
+              src="public/logo-600h.png"
+              class="home-branding"
+            />
+            <a href="index.html" class="home-navlink">
+              Copyright © CeylonCraft - 2024
             </a>
           </div>
-        </div>
-      </div>
-      <div id="about"></div>
-      <div class="main5">
-        <a class="headline">Head Staff</a>
-        <div class="main5_admin_div">
-          <div class="main5_admins_div main5_admins_dev_type2">
-            <img class="main5_admins_img" alt="admin member img" src="media/Head Staff/Riviya.jpg">
-            <div class="main5_admins_description_div">
-              <a class="main5_admins_description_rank main5_admins_description_rank_owner">[Owner]</a>
-              <a class="main5_admins_description_title" href="https://example.com">GGRiviya</a>
-              <a class="main5_admins_description"><br>
-                CeylonCraft Minecraft Network
-                Owned by GGRiviya, CeylonCraft offers a vibrant and immersive Minecraft experience. Join our thriving community, explore unique worlds, and engage in epic adventures. Build, craft, and conquer in a realm where creativity knows no bounds!</a>
-            </div>
-          </div>
-          <div class="main5_admins_div main5_admins_dev_type1">
-            <img class="main5_admins_img" alt="admin member img" src="media/Head Staff/McMobile.jpg">
-            <div class="main5_admins_description_div">
-              <a class="main5_admins_description_rank main5_admins_description_rank_admin">[Co-Owner]</a>
-              <a class="main5_admins_description_title" href="https://example.com">McMobile</a>
-              <a class="main5_admins_description"><br></a>
-              CeylonCraft Minecraft Network
-              Owned by GGRiviya and co-owned by McMobile, CeylonCraft delivers a dynamic and immersive Minecraft experience. Dive into unique worlds, join a thriving community, and embark on epic adventures. Build, craft, and explore in a realm where creativity and excitement meet!
-            </div>
-          </div>
-        </div>
-        <div class="main5_supporter_div">
-          <div class="main5_supporters_div">
-            <img class="main5_supporters_img" alt="supporters member img" src="media/Head Staff/Disiya.jpg">
-            <div class="main5_supporters_description_div">
-              <a class="main5_supporters_description_rank main5_supporters_description_rank_supporter" style="color: #db2e2e;">[Co-Owner]</a>
-              <a class="main5_supporters_description_title">Disiya04</a>
-              <a class="main5_supporters_description"><br></a>CeylonCraft Minecraft Network
-              Owned by GGriviya, McMobile and Disiya04 with dedicated support staff. Join our vibrant community, explore unique worlds, and enjoy endless adventures!
-            </div>
-          </div>
-          <div class="main5_supporters_div">
-            <img class="main5_supporters_img" alt="supporters member img" src="media/Head Staff/Ruviya.jpg">
-            <div class="main5_supporters_description_div">
-              <a class="main5_supporters_description_rank main5_supporters_description_rank_supporter">[Head-Admin]</a>
-              <a class="main5_supporters_description_title">Ruvindu_MAX_</a>
-              <a class="main5_supporters_description"><br>CeylonCraft Minecraft Network
-                Owned by GGriviya, McMobile and Disiya04 with dedicated support staff. Join our vibrant community, explore unique worlds, and enjoy endless adventures!</a>
-            </div>
-          </div>
-          
-          <div class="main5_supporters_div">
-            <img class="main5_supporters_img" alt="supporters member img" src="media/Head Staff/Ghost.jpg">
-            <div class="main5_supporters_description_div">
-              <a class="main5_supporters_description_rank main5_supporters_description_rank_supporter">[Admin]</a>
-              <a class="main5_supporters_description_title">Gaming_Ghost</a>
-              <a class="main5_supporters_description"><br>CeylonCraft Minecraft Network
-                Owned by GGriviya, McMobile and Disiya04 with dedicated support staff. Join our vibrant community, explore unique worlds, and enjoy endless adventures!</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="join"></div>
-      <div class="main3">
-        <a class="headline">How to join</a>
-        <div class="main3_join_div_div">
-          <div class="main3_join_div">
-            <a class="main3_join_title">Java</a>
-            <div class="main3_join_content_div">
-              <div class="main3_join_categories">
-                <a>IP:</a>
-                <a>Ver.:</a>
-              </div>
-              <div class="main3_join_values">
-                <a>mc.ceyloncraft.online</a>
-                <a>1.9.x+ </a>
-              </div>
-            </div>
-          </div>
-          <div class="main3_join_div">
-            <a class="main3_join_title">Bedrock</a>
-            <div class="main3_join_content_div">
-              <div class="main3_join_categories">
-                <a>IP:</a>
-                <a>Port:</a>
-              </div>
-              <div class="main3_join_values">
-                <a>Coming soon</a>
-                <a>Loading.....</a>
-              </div>
-            </div>
-          </div>
-        </div>
+        </footer>
       </div>
     </div>
-    <footer class="copyright_div">
-      <a href="#" class="copyright">Develop by CeylonCraft Dev Team - Edited by @GGRiviya 2024</a>
-    </footer>
   </body>
 </html>
